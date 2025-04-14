@@ -1,8 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { IProduct } from './product.model';
-import { CartService } from '../cart.service';
-import { Observable } from 'rxjs';
 import { ProductService } from './product.service';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'bot-catalog',
@@ -14,7 +13,7 @@ import { ProductService } from './product.service';
 export class CatalogComponent {
   products: IProduct[] = [];
   filter: string = '';
-
+ 
   constructor(private cartService: CartService,
     private productService: ProductService) {
 
