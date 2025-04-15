@@ -8,6 +8,7 @@ import { SiteHeaderComponent } from './site-header/site-header.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { SignInComponent } from './cart/user/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,13 @@ import { AppRoutingModule } from './app-routing.module';
     HomeComponent,
     CatalogComponent,
     SiteHeaderComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
