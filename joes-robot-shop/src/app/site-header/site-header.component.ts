@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IUser } from '../cart/user/user.model';
+import { UserService } from '../cart/user/user.service';
 
 @Component({
   selector: 'bot-site-header',
@@ -7,8 +9,27 @@ import { Component } from '@angular/core';
   standalone: false
 })
 
-export class SiteHeaderComponent {
+export class SiteHeaderComponent implements OnInit {
+  user: IUser | null = null;
+  showSignOutMenu: boolean = false;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
+
+  ngOnInit(): void {
+    this.userService.getUser().subscribe({
+      next: (user) => { this.user = user }
+    });
+  }
+
+
+  toggleSignOutMenu() {
+    this.showSignOutMenu = !this.showSignOutMenu;
+  }
+
+  signOut() {
+    console.log( 'HEADER - signing out')
+    this.userService.signOut();
+    this.showSignOutMenu = false;
+  }
 
 }

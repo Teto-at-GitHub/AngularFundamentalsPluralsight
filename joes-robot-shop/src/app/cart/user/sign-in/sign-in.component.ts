@@ -15,6 +15,7 @@ export class SignInComponent {
     email: 'your email',
     password: ''
   }
+  signInError: boolean = false;
 
   constructor(
     private userService: UserService,
@@ -22,8 +23,10 @@ export class SignInComponent {
   ) { }
 
   signIn() {
+    this.signInError = false;
     this.userService.signIn(this.credentials).subscribe({
-      next: () => this.router.navigate(['/catalog'])
+      next: () => this.router.navigate(['/catalog']),
+      error: () => (this.signInError = true)
     });
 
   }

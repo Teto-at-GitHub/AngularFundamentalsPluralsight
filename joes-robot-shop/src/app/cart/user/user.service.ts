@@ -28,6 +28,7 @@ export class UserService {
   }
 
   signOut() {
+    console.log('Signing out')
     this.user.next(null);
   }
 }
