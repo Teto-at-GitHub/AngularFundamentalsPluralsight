@@ -10,6 +10,7 @@ import { SiteHeaderComponent } from './site-header/site-header.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignInComponent } from './cart/user/sign-in/sign-in.component';
+import { TemplateFormControlsComponent } from './cart/user/template-form-controls/template-form-controls.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,14 @@ import { SignInComponent } from './cart/user/sign-in/sign-in.component';
     CatalogComponent,
     SiteHeaderComponent,
     ProductDetailsComponent,
-    SignInComponent
+    SignInComponent,
+    TemplateFormControlsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
