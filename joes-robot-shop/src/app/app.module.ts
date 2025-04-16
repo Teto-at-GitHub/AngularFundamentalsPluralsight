@@ -9,8 +9,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SignInComponent } from './cart/user/sign-in/sign-in.component';
-import { TemplateFormControlsComponent } from './cart/user/template-form-controls/template-form-controls.component';
+import { UserModule } from './cart/user/user.module';
 
 @NgModule({
   declarations: [
@@ -18,15 +17,14 @@ import { TemplateFormControlsComponent } from './cart/user/template-form-control
     HomeComponent,
     CatalogComponent,
     SiteHeaderComponent,
-    ProductDetailsComponent,
-    SignInComponent,
-    TemplateFormControlsComponent
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
